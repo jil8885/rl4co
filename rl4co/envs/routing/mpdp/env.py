@@ -311,7 +311,7 @@ class MPDPEnv(RL4COEnvBase):
 
     def _make_spec(self, generator: MPDPGenerator):
         """Make the observation and action specs from the parameters."""
-        max_nodes = self.num_loc + self.max_num_agents + 1
+        max_nodes = generator.num_loc + self.max_num_agents + 1
         self.observation_spec = CompositeSpec(
             locs=BoundedTensorSpec(
                 low=generator.min_loc,
